@@ -6,7 +6,7 @@ export default {
     alignItems: "center",
     justifyContent: "flex-start",
     height: "6vh",
-    backgroundColor: "#eceff1"
+    backgroundColor: "#eceff1",
   },
   logo: {
     marginRight: "15px",
@@ -19,11 +19,11 @@ export default {
     alignItems: "center",
     "& a": {
       textDecoration: "none",
-      color: "black"
+      color: "black",
     },
     [sizes.down("xs")]: {
-      display: "none"
-    }
+      display: "none",
+    },
   },
   slider: {
     width: "340px",
@@ -31,7 +31,7 @@ export default {
     display: "inline-block",
 
     "& .rc-slider-track": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "& .rc-slider-rail": {
       height: "6px",
@@ -45,14 +45,17 @@ export default {
       width: "12px",
       height: "12px",
       marginLeft: "-7px",
-      marginTop: "-3px"
+      marginTop: "-3px",
     },
     [sizes.down("sm")]: {
-      width: "150px"
-    }
+      width: "150px",
+    },
   },
   selectContainer: {
     marginLeft: "auto",
-    marginRight: "1rem"
-  }
+    marginRight: "1rem",
+  },
+  selectedColorTitle: {
+    textTransform: "capitalize",
+  },
 };

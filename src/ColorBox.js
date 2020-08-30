@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/styles';
-import UIfx from 'uifx';
+import React, { Component } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Link } from "react-router-dom";
+import classNames from "classnames";
+import { withStyles } from "@material-ui/styles";
+import UIfx from "uifx";
 
-import styles from './styles/ColorBoxStyles';
+import styles from "./styles/ColorBoxStyles";
 
-import chimeAudio from './assets/chime.wav';
+import chimeAudio from "./assets/media/chime.wav";
 
 const chime = new UIfx(chimeAudio, {
   volume: 0.5, // number between 0.0 ~ 1.0

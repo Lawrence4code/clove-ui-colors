@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/styles';
-import Navbar from './Navbar';
-import ColorBox from './ColorBox';
-import PaletteFooter from './PaletteFooter';
-import styles from './styles/PaletteStyles';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
+import Navbar from "./Navbar";
+import ColorBox from "./ColorBox";
+import PaletteFooter from "./PaletteFooter";
+import styles from "./styles/PaletteStyles";
 
 class SingleColorPalette extends Component {
   constructor(props) {
     super(props);
     this._shades = this.gatherShades(this.props.palette, this.props.colorId);
-    this.state = { format: 'hex' };
+    this.state = { format: "hex" };
     this.changeFormat = this.changeFormat.bind(this);
   }
   gatherShades(palette, colorToFilterBy) {
@@ -39,9 +39,14 @@ class SingleColorPalette extends Component {
         showingFullPalette={false}
       />
     ));
+    const selectedColor = this.props.colorId.replace(/-/g, " ");
     return (
       <div className={classes.Palette}>
-        <Navbar handleChange={this.changeFormat} showingAllColors={false} />
+        <Navbar
+          handleChange={this.changeFormat}
+          showingAllColors={false}
+          selectedColor={selectedColor}
+        />
         <div className={classes.colors}>
           {colorBoxes}
           <div className={classes.goBack}>
