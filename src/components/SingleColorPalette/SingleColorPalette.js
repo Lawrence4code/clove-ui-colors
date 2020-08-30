@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
-import Navbar from "./Navbar";
-import ColorBox from "./ColorBox";
-import PaletteFooter from "./PaletteFooter";
-import styles from "./styles/PaletteStyles";
+import Navbar from "../Navbar/Navbar";
+import ColorBox from "../ColorBox/ColorBox";
+import PaletteFooter from "../PaletteFooter/PaletteFooter";
+import styles from "../Palette/PaletteStyles";
 
-import { SoundContextProvider } from "./context/soundContext";
+import { SoundContextProvider } from "../../context/soundContext";
 
 class SingleColorPalette extends Component {
   constructor(props) {

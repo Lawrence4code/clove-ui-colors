@@ -8,12 +8,14 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import styles from "./styles/NavbarStyles";
-import clove from "./assets/images/clover.svg";
+import styles from "./NavbarStyles";
+
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 
-import { SoundContext } from "./context/soundContext";
+import clove from "../../assets/images/clover.svg";
+
+import { SoundContext } from "../../context/soundContext";
 
 class Navbar extends Component {
   constructor(props) {
@@ -78,11 +80,13 @@ class Navbar extends Component {
           <div className={classes.volumeContainer}>
             {soundState ? (
               <VolumeUpIcon
+                style={{ color: "blue" }}
                 className={classes.deleteIcon}
                 onClick={toggleSound}
               />
             ) : (
               <VolumeOffIcon
+                style={{ color: "grey" }}
                 className={classes.deleteIcon}
                 onClick={toggleSound}
               />

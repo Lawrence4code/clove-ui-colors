@@ -5,10 +5,10 @@ import classNames from "classnames";
 import { withStyles } from "@material-ui/styles";
 import UIfx from "uifx";
 
-import styles from "./styles/ColorBoxStyles";
-import { SoundContext } from "./context/soundContext";
+import styles from "./ColorBoxStyles";
+import { SoundContext } from "../../context/soundContext";
 
-import chimeAudio from "./assets/media/chime.wav";
+import chimeAudio from "../../assets/media/chime.wav";
 
 const chime = new UIfx(chimeAudio, {
   volume: 0.2, // number between 0.0 ~ 1.0
