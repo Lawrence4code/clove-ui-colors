@@ -52,7 +52,12 @@ export default {
     },
   },
   selectContainer: {
+    display: "flex",
+    alignItems: "center",
     marginLeft: "auto",
+    marginRight: "1rem",
+  },
+  volumeContainer: {
     marginRight: "1rem",
   },
   selectedColorTitle: {

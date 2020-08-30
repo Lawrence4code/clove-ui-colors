@@ -10,6 +10,10 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import styles from "./styles/NavbarStyles";
 import clove from "./assets/images/clover.svg";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import VolumeOffIcon from "@material-ui/icons/VolumeOff";
+
+import { SoundContext } from "./context/soundContext";
 
 class Navbar extends Component {
   constructor(props) {
@@ -18,6 +22,9 @@ class Navbar extends Component {
     this.handleFormatChange = this.handleFormatChange.bind(this);
     this.closeSnackbar = this.closeSnackbar.bind(this);
   }
+
+  static contextType = SoundContext;
+
   handleFormatChange(e) {
     this.setState({ format: e.target.value, open: true });
     this.props.handleChange(e.target.value);
@@ -33,7 +40,9 @@ class Navbar extends Component {
       classes,
       selectedColor,
     } = this.props;
+    const { soundState, toggleSound } = this.context;
     const { format } = this.state;
+    console.log(this.props, "******", soundState, toggleSound);
     return (
       <header className={classes.Navbar}>
         <div className={classes.logo}>
@@ -41,7 +50,7 @@ class Navbar extends Component {
             <img
               src={clove}
               style={{ width: "35px", height: "35px" }}
-              alt="React Logo"
+              alt="Clove UI colors Logo"
             />
           </Link>
         </div>
@@ -67,6 +76,19 @@ class Navbar extends Component {
           </div>
         )}
         <div className={classes.selectContainer}>
+          <div className={classes.volumeContainer}>
+            {soundState ? (
+              <VolumeUpIcon
+                className={classes.deleteIcon}
+                onClick={toggleSound}
+              />
+            ) : (
+              <VolumeOffIcon
+                className={classes.deleteIcon}
+                onClick={toggleSound}
+              />
+            )}
+          </div>
           <Select value={format} onChange={this.handleFormatChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
             <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>

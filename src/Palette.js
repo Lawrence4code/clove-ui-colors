@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-import ColorBox from './ColorBox';
-import Navbar from './Navbar';
-import PaletteFooter from './PaletteFooter';
-import { withStyles } from '@material-ui/styles';
-import styles from './styles/PaletteStyles';
+import React, { Component } from "react";
+import ColorBox from "./ColorBox";
+import Navbar from "./Navbar";
+import PaletteFooter from "./PaletteFooter";
+import { withStyles } from "@material-ui/styles";
+import styles from "./styles/PaletteStyles";
+
+import { SoundContextProvider } from "./context/soundContext";
 
 class Palette extends Component {
   constructor(props) {
     super(props);
-    this.state = { level: 500, format: 'hex' };
+    this.state = { level: 500, format: "hex" };
     this.changeLevel = this.changeLevel.bind(this);
     this.changeFormat = this.changeFormat.bind(this);
   }
@@ -32,16 +34,19 @@ class Palette extends Component {
       />
     ));
     return (
-      <div className={classes.Palette}>
-        <Navbar
-          level={level}
-          changeLevel={this.changeLevel}
-          handleChange={this.changeFormat}
-          showingAllColors
-        />
-        <div className={classes.colors}>{colorBoxes}</div>
-        <PaletteFooter paletteName={paletteName} emoji={emoji} />
-      </div>
+      <SoundContextProvider>
+        <div className={classes.Palette}>
+          <Navbar
+            level={level}
+            changeLevel={this.changeLevel}
+            handleChange={this.changeFormat}
+            showingAllColors
+          />
+
+          <div className={classes.colors}>{colorBoxes}</div>
+          <PaletteFooter paletteName={paletteName} emoji={emoji} />
+        </div>
+      </SoundContextProvider>
     );
   }
 }

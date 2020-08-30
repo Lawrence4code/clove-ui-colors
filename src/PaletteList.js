@@ -31,7 +31,6 @@ class PaletteList extends Component {
     this.goToPalette = this.goToPalette.bind(this);
   }
   openDialog(id) {
-    console.log("test");
     this.setState({ openDeleteDialog: true, deletingId: id });
   }
   closeDialog() {

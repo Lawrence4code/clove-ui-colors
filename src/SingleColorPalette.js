@@ -6,6 +6,8 @@ import ColorBox from "./ColorBox";
 import PaletteFooter from "./PaletteFooter";
 import styles from "./styles/PaletteStyles";
 
+import { SoundContextProvider } from "./context/soundContext";
+
 class SingleColorPalette extends Component {
   constructor(props) {
     super(props);
@@ -41,20 +43,23 @@ class SingleColorPalette extends Component {
     ));
     const selectedColor = this.props.colorId.replace(/-/g, " ");
     return (
-      <div className={classes.Palette}>
-        <Navbar
-          handleChange={this.changeFormat}
-          showingAllColors={false}
-          selectedColor={selectedColor}
-        />
-        <div className={classes.colors}>
-          {colorBoxes}
-          <div className={classes.goBack}>
-            <Link to={`/palette/${id}`}>GO BACK</Link>
+      <SoundContextProvider>
+        <div className={classes.Palette}>
+          <Navbar
+            handleChange={this.changeFormat}
+            showingAllColors={false}
+            selectedColor={selectedColor}
+          />
+          <div className={classes.colors}>
+            {colorBoxes}
+            <div className={classes.goBack}>
+              <Link to={`/palette/${id}`}>GO BACK</Link>
+            </div>
           </div>
+
+          <PaletteFooter paletteName={paletteName} emoji={emoji} />
         </div>
-        <PaletteFooter paletteName={paletteName} emoji={emoji} />
-      </div>
+      </SoundContextProvider>
     );
   }
 }
