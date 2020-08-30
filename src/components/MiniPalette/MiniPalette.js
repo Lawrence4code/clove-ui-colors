@@ -35,9 +35,9 @@ class MiniPalette extends PureComponent {
         />
 
         <div className={classes.colors}>{miniColorBoxes}</div>
-        <h5 className={classes.title}>
+        <p className={classes.title}>
           {paletteName} <span className={classes.emoji}>{emoji}</span>
-        </h5>
+        </p>
       </div>
     );
   }
