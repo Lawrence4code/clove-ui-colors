@@ -25,7 +25,6 @@ class ColorBox extends Component {
   static contextType = SoundContext;
 
   changeCopyState(soundState) {
-    console.log("soundState on copy ", soundState);
     this.setState({ copied: true }, () => {
       if (soundState) {
         setTimeout(() => chime.play(), 200);
@@ -42,7 +41,6 @@ class ColorBox extends Component {
       showingFullPalette,
       classes,
     } = this.props;
-    console.log("this.context", this.context);
     const { soundState } = this.context;
     const { copied } = this.state;
     return (

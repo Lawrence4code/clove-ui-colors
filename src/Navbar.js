@@ -42,7 +42,6 @@ class Navbar extends Component {
     } = this.props;
     const { soundState, toggleSound } = this.context;
     const { format } = this.state;
-    console.log(this.props, "******", soundState, toggleSound);
     return (
       <header className={classes.Navbar}>
         <div className={classes.logo}>
